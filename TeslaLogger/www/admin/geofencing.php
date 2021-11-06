@@ -170,6 +170,8 @@ function sf(lat, lng, radius)
 		echo('<span class="icon genericon genericon-edit" />');
 		echo("</a> <a href='javascript:sf($v[1],$v[2], $v[5]);'>");
 		echo('<span class="icon genericon genericon-search" />');
+		echo("</a><a href='geoadd_write.php?delete=yes&id=$v[3]'>");
+		echo('<span class="icon genericon genericon-trash" />');
 		echo("</a></td></tr>\n");
 	}
 	?>
