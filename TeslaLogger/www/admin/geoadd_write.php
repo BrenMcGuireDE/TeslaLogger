@@ -5,6 +5,8 @@ $lng = $_POST["lng"];
 $radius = $_POST["radius"];
 $flag = $_POST["flag"];
 $id = $_POST["id"];
+$idtodelete = $_GET["id"];
+$delete = $_GET["delete"];
 
 $Text = str_replace(","," ",$Text);
 $radius = str_replace(",","",$radius);
@@ -39,6 +41,12 @@ if(strpos($flag,"+") !== false)
 else
 {
         $tmp = "\r\n".$Text.",".$lat.",".$lng.",".$radius;
+}
+
+// Check if geoadd_write.php was called via Delete Button and delete the line
+if(strpos($delete,"yes") !== false)
+{
+        $tmp = "";
 }
 
 // Copy all entries after edited item
